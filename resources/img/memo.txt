@@ -1,0 +1,46 @@
+//BG color
+#fcfaeb
+
+//main color
+#af3a46
+
+//mute color
+#e8e8e8
+
+btn-gray
+通常色
+#969696
+中間色
+#898585
+暗めの色
+#7c7979
+
+//tableの右端に合うレイアウト
+<div class="row">
+    <button class="btn btn-danger col-10 col-sm-4 offset-1 offset-sm-8 mt-3 mt-sm-0" type="button" onclick="location.href='{{url('/mlog')}}'">TOPに戻る</button>
+</div>
+
+    //ログインuser_idを取得
+    $user_id = \Auth::user()->id;
+    
+    where('user_id', $user_id)->
+        
+    //選択したプルダウンからヒストリーを取得
+    $history = $selected_part->histories->where('user_id', $user_id)->last();
+        
+    //user_idに紐付いたhistoryがあればdetailを取得
+        if($history){
+            $detail = Detail::with('workout')->where('history_id',$history->id)
+                ->whereHas('workout', function ($query) {
+                    $query->whereExists(function ($query) {
+                        return $query;});})->get();
+        //$historyがなければNULL/$history->idの'id'がないというエラーが出るため
+        }else{
+            $detail = NULL;
+        }
+        return view('mlog',[
+           'id'=>$id,
+           'parts' => $parts,
+           'detail' => $detail
+        ]);
+        

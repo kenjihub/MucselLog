@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='ja'>
+    <head>
+        <meta charset='UTF-8'>
+        <style>
+            div{
+                width:100px;
+                height:100px;
+                background-color:red;
+                border-radius:50%;
+                position:absolute;
+                top:0px;
+                left:0px;
+                opacity: 0;
+                transition: all 2s;
+            }
+            p{
+                width: 500px;
+                height: 300px;
+                background-color:gray;
+            }
+        </style>
+        <script>
+            window.onload=function(){
+                setTimeout(function(){
+                    var obj = document.getElementById('box');
+                    obj.style.opacity='0.5';
+                    obj.style.top='100px';
+                    obj.style.left='200px';
+                },1000);
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+            ここにビデオが入る
+        </p>
+        <div id='box'></div>
+    </body>
+</html>
