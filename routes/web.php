@@ -59,8 +59,3 @@ Route::post('/mypage/detail/{id}',[MLogController::class,'store_my_detail'])->na
 Auth::routes();
 Route::get('/home',[HomeController::class,'index'])->name('home');
 
-/*
-//jquery学習用
-Route::get('/jq/practice',function () {return view('jq.practice5');});
-//Bootstrap学習用
-Route::get('/btstp/practice',function () {return view('btstp.practice2');});
