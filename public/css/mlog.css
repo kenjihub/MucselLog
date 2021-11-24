@@ -7,7 +7,7 @@ body {
     background: #af3a46;
 }
 .footer{
-    height: 30px;
+    height: 40px;
     background: #af3a46;
 }
 .top_logo{
@@ -22,34 +22,4 @@ body {
 }
 .bar-gray{
     background: #969696;
-}
-
-/* 通常のボタン色 */
-.btn-gray{
-    width: 100px;
-}
-.btn-gray
-.btn-gray.disabled, .btn-gray:disabled{
-    color: white;
-    background-color: #969696;
-    border-color: #969696;
-}
-/* focusされた時の枠線の色 */
-.btn-gray:focus, .btn-gray.focus,
-.btn-gray:not(:disabled):not(.disabled):active:focus, .btn-gray:not(:disabled):not(.disabled).active:focus,
-.show > .btn-gray.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
-/* hover時（マウスカーソルを重ねた時）の色（通常より濃いor暗めの色を指定） */
-.btn-gray:hover {
-  color: white;
-  background-color: #898585;
-  border-color: #898585;
-}
-/* active時の色（hover時と同等かさらに濃いor暗めの色を指定） */
-.btn-gray:not(:disabled):not(.disabled):active, .btn-gray:not(:disabled):not(.disabled).active,
-.show > .btn-gray.dropdown-toggle {
-  color: white;
-  background-color: #7c7979;
-  border-color: #7c7979;
 }

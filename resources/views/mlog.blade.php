@@ -1,6 +1,6 @@
 @extends('layouts.common')
 
-@section('title', 'TOP')
+@section('title', 'HOME')
 @include('layouts.header_link')
 @include('layouts.footer')
 @section('content')
@@ -30,11 +30,5 @@
             <input type="submit" value="新規トレーニング" class="form-control btn btn-danger">
         </form>
     </div>
-</div>
-<div>
-   <form action="{{ url('/logout') }}" method="post">
-        @csrf
-        <button type="submit">ログアウト</button>
-    </form>
 </div>
 @endsection

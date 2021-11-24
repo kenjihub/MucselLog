@@ -33,7 +33,10 @@
            </tbody>
         </table>
     </div>
+    <form class='row' method='POST' class="form-inline col p-0" action="{{route('create_detail',$id)}}" >
+    @csrf
     @include('form.store_detail')
+    </form>
     <script>
         function training_over(){
             if(confirm('トレーニング終了しますか？')){

@@ -26,8 +26,8 @@
       </tbody>
    </table>
    @else
-   <div class="row">
-      <p class="col text-center mb-3 py-1 px-0 text-dark" style="background: #e8e8e8">記録がありません</p>
+   <div class="row m-0 px-0">
+      <p class="col-sm-12 col-10 mx-auto text-center mb-3 py-1 px-0 text-dark" style="background: #e8e8e8">記録がありません</p>
    </div>
    @endif
 </div>

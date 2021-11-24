@@ -48,6 +48,6 @@ class LoginController extends Controller
         // 1. 元々のログアウト処理を実行する
         $this->doLogout($request);
         // 2. リダイレクト先を独自に設定する。
-        return redirect('/login'); 
+        return redirect('/top'); 
     }
 }
