@@ -1,0 +1,26 @@
+
+.header{
+    height: 50px;
+    background: #af3a46;
+}
+.footer{
+    height: 40px;
+    background: #af3a46;
+}
+.top_logo{
+    height:30px;
+}
+.btn-secondary{
+    opacity:0.7;
+}
+
+body{
+    background-size:cover;
+    background:#ddd url(/img/BG.jpg) no-repeat center center;
+}
+#card{
+    padding-top:20vh;
+}
+
+.video_wrapper>video{
+}

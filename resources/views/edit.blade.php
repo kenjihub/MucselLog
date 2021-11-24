@@ -2,7 +2,7 @@
 @extends('layouts.header')
 
 @section('title', 'EDIT')
-@section('nav_title', '- トレーニング種目編集 -')
+@section('nav_title', '- 種目編集 -')
 @include('layouts.header')
 @include('layouts.footer')
 @section('content')
@@ -15,7 +15,9 @@
          <tr>
              <th class="text-nowrap text-center col">種目名</th>
              <th class="text-nowrap text-center col-1">部&nbsp;位</th>
+             @if($user=='admin')
              <th class="text-nowrap text-center col-1">削&nbsp;除</th>
+             @endif
          </tr>
       </thead>
       <tbody>
@@ -23,6 +25,7 @@
       <tr>
           <td class="text-left align-middle ps-sm-5 ps-3">{{ $wk->name }}</td>
           <td class="text-center align-middle">{{ $wk->part->name }}</td>
+          @if($user=='admin')
           <td class="text-center align-middle">
               <form method="post" action="{{route('del_workout')}}" class="mb-0">
                   @csrf
@@ -31,6 +34,7 @@
                   <input type="submit"　 class="btn btn-danger" value="削除">
               </form>
           </td>
+          @endif
       </tr>
       @endforeach
       </tbody>

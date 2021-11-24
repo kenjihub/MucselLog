@@ -119,8 +119,9 @@ return [
     'attributes' => [
         'workout_id' => 'トレーニング種目',
         'weight' =>'重量',
-        'reps'=>'回数'
-        
+        'reps'=>'回数',
+        'part_id'=>'部位選択',
+        'name'=>'種目名'
     ],
 
 ];

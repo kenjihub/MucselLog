@@ -16,12 +16,16 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-//作り直しmlogのルーティング↓↓
+Route::get('/top',function(){return view('top');});
+
+Route::get('/tutorial',function(){return view('tutorial');})->name('tutorial');
+
 //topページの部位選択を表示
 Route::get('/mlog',function () {return redirect('/mlog/1');});
 //選択した部位を受け取って詳細を返す
 Route::get('/mlog/{id}',[MLogController::class,'get_details_at_mlog'])->name('detail');
 
+//history/
 //新規トレーニングボタンで、historyを追加
 Route::post('/mlog/{id}/history',[MLogController::class,'store_history'])->name('create_history');
 //詳細を新規作成
@@ -30,6 +34,7 @@ Route::get('/mlog/{id}/history',[MLogController::class,'get_detail_at_history'])
 //戻るボタンで新規作成したhistoryを削除して、トップページに戻る
 Route::delete('/mlog/{id}/history',[MLogController::class,'del_histroy'])->name('del_history');
 
+//detail/
 //新規登録ボタンで、detailを追加
 Route::post('/mlog/{id}/detail',[MLogController::class,'store_detail'])->name('create_detail');
 //詳細を新規作成
@@ -37,7 +42,7 @@ Route::get('/mlog/{id}/detail',[MLogController::class,'get_detail_at_detail']);
 //トレーニング終了時にsession削除
 Route::get('/mlog/{id}/finish',[MLogController::class,'del_session'])->name('finish');
 
-//種目追加ページ
+//EDIT/種目追加ページ
 Route::get('/edit',[MLogController::class,'get_all_workout'])->name('edit');
 Route::delete('/edit',[MLogController::class,'del_workout'])->name('del_workout');
 Route::post('/edit',[MLogController::class,'store_workout'])->name('store_workout');
@@ -49,6 +54,7 @@ Route::delete('/mypage',[MLogController::class,'del_my_history'])->name('del_my_
 //MYPAGEの詳細編集ページ
 Route::get('/mypage/detail/{id}',[MLogController::class,'show_my_detail'])->name('show_my_detail');
 Route::delete('/mypage/detail/{id}',[MLogController::class,'del_my_detail'])->name('del_my_detail');
+Route::post('/mypage/detail/{id}',[MLogController::class,'store_my_detail'])->name('create_my_detail');
 
 Auth::routes();
 Route::get('/home',[HomeController::class,'index'])->name('home');

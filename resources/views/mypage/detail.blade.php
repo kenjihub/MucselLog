@@ -48,12 +48,12 @@
    </table>
 </div>
 @endif
-<div class="row">
-    <div class="px-sm-0 px-3" >
-        <button class="btn btn-secondary text-nowrap col-12 mb-3" type="button" onclick="location.href='{{url('/mypage')}}'">履歴一覧に戻る</button>
-        <button class="btn btn-danger text-nowrap col-12" type="button" onclick="location.href='{{url('/mlog')}}'">TOPに戻る</button>
-    </div>
-</div>
+<form class='row' method='POST' class="form-inline col p-0" action="{{route('create_my_detail',$id)}}" >
+    @csrf
+    @include('form.store_detail')
+    <button class="btn btn-secondary text-nowrap mt-3 col-4 col-sm-5 offset-1 offset-sm-0" type="button" onclick="location.href='{{url('/mypage')}}'">履歴一覧に戻る</button>
+    <button class="btn btn-outline-danger text-nowrap mt-3 col-4 col-sm-5 offset-2" type="button" onclick="location.href='{{url('/mlog')}}'">TOPに戻る</button>
+</form>
 
 
 @endsection

@@ -22,11 +22,6 @@
             <div class="main">
                 @yield('content')
             </div>
-         
-            <!-- 共通メニュー -->
-            <div class="sub">
-                @yield('submenu')
-            </div>
         </div>
          
         @yield('footer')
